@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Aventones</title>
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="assets/css/login.css" />
+    </head>
+    <body>
+        <main class="main__login container">
+            <section class="main__login-container container">
+                <div class="main__login-logo">
+                    <img
+                        src="assets/images/aventones-logo.png"
+                        alt="Aventones logo"
+                    />
+                </div>
+
+                <div class="main__login-google">
+                    <button type="button" class="container">
+                        <img
+                            src="assets/images/google-icon.png"
+                            alt="google icon"
+                        />
+                        Sign in with Google
+                    </button>
+                </div>
+
+                <div class="main__login-or">
+                    <p>Or</p>
+                </div>
+
+                <form action="pages/rides-my_rides.html">
+                    <div class="main__login-username">
+                        <label for="username">Username</label>
+                        <input type="text" name="username" id="username" />
+                    </div>
+
+                    <div class="main__login-password">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" />
+                    </div>
+
+                    <div class="main__login-register">
+                        <p>
+                            Not an user?
+                            <a href="pages/registration-user.html">
+                                Register Now
+                            </a>
+                        </p>
+                    </div>
+
+                    <div class="main__login-login_button container">
+                        <button type="submit">Login</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+
+        <footer class="footer container">
+            <div class="footer__container">
+                <nav class="footer__nav container">
+                    <ul class="footer__list container">
+                        <li>
+                            <a href="pages/home-search_rides.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="pages/rides-my_rides.html">Rides</a>
+                        </li>
+                        <li><a href="pages/bookings.html">Bookings</a></li>
+                        <li>
+                            <a href="pages/home-edit_profile.html">Settings</a>
+                        </li>
+                        <li><a href="#">Login</a></li>
+                        <li>
+                            <a href="pages/registration-user.html">Register</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="footer__copyright container">
+                    <p>
+                        <img
+                            src="assets/images/copyright.png"
+                            alt="copyright image"
+                        />
+                        Aventones.com
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

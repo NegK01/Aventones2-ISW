@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="../assets/css/main.css" />
+        <link rel="stylesheet" href="../assets/css/registration.css" />
+        <link rel="stylesheet" href="../assets/css/configuration.css" />
+    </head>
+    <body>
+        <header class="header-container container">
+            <div class="header__logo container">
+                <img
+                    src="../assets/images/aventones-logo.png"
+                    alt="Aventones logo"
+                />
+            </div>
+
+            <nav class="header__nav-container container">
+                <div class="nav-left">
+                    <ul>
+                        <li>
+                            <a href="../pages/home-search_rides.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="../pages/rides-my_rides.html">Rides</a>
+                        </li>
+                        <li class="nav-activo">
+                            <a href="../pages/bookings.html">Booking</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-right">
+                    <input
+                        type="search"
+                        name="search"
+                        id="search"
+                        placeholder="Search..."
+                    />
+
+                    <div class="nav-profile">
+                        <img
+                            src="../assets/images/profile.png"
+                            alt="profile icon"
+                        />
+                        <div class="nav-config">
+                            <a href="../index.html">Logout</a>
+                            <a href="../pages/home-edit_profile.html"
+                                >Settings</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <h2>Configuration</h2>
+
+            <section class="configuration-container container">
+                <div class="public_name">
+                    <label for="public_name">Public Name</label>
+                    <input
+                        type="text"
+                        name="public_name"
+                        id="public_name"
+                        value="Bladimir"
+                    />
+                </div>
+
+                <div class="public_bio">
+                    <label for="public_bio">Public Bio</label>
+                    <textarea name="public_bio" id="public_bio"></textarea>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer container">
+            <div class="footer__container">
+                <nav class="footer__nav container">
+                    <ul class="footer__list container">
+                        <li>
+                            <a href="../pages/home-search_rides.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="../pages/rides-my_rides.html">Rides</a>
+                        </li>
+                        <li><a href="../pages/bookings.html">Bookings</a></li>
+                        <li>
+                            <a href="../pages/home-edit_profile.html"
+                                >Settings</a
+                            >
+                        </li>
+                        <li><a href="../index.html">Login</a></li>
+                        <li>
+                            <a href="../pages/registration-user.html"
+                                >Register</a
+                            >
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="footer__copyright container">
+                    <p>
+                        <img
+                            src="../assets/images/copyright.png"
+                            alt="copyright image"
+                        />
+                        Aventones.com
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,22 @@
+.configuration-container {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+main {
+    width: 100%;
+}
+
+input, textarea {
+    display: block;
+}
+
+.public_name {
+    padding-right: 579px;
+}
+
+.public_bio textarea{
+    width: 750px;
+    height: 125px;
+}

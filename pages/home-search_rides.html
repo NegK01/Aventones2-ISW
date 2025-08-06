@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="../assets/css/main.css" />
+        <link rel="stylesheet" href="../assets/css/my_rides.css" />
+        <link rel="stylesheet" href="../assets/css/search_rides.css" />
+    </head>
+    <body>
+        <header class="header-container container">
+            <div class="header__logo container">
+                <img
+                    src="../assets/images/aventones-logo.png"
+                    alt="Aventones logo"
+                />
+            </div>
+
+            <nav class="header__nav-container container">
+                <div class="nav-left">
+                    <ul>
+                        <li class="nav-activo">
+                            <a href="../pages/home-search_rides.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="../pages/rides-my_rides.html">Rides</a>
+                        </li>
+                        <li>
+                            <a href="../pages/bookings.html">Booking</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-right">
+                    <input
+                        type="search"
+                        name="search"
+                        id="search"
+                        placeholder="Search..."
+                    />
+
+                    <div class="nav-profile">
+                        <img
+                            src="../assets/images/profile.png"
+                            alt="profile icon"
+                        />
+                        <div class="nav-config">
+                            <a href="../index.html">Logout</a>
+                            <a href="../pages/home-edit_profile.html"
+                                >Profile</a
+                            >
+                            <a href="../pages/home-configuration.html"
+                                >Configuration</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <h2>Search Rides</h2>
+
+            <form action="#" class="search-form container">
+                <section class="form-controls container">
+                    <div class="form-control-left">
+                        <label for="from">From</label>
+                        <select name="from" id="from">
+                            <option value="Quesada">Quesada</option>
+                        </select>
+                    </div>
+                    <div class="form-control-right">
+                        <label for="to">To</label>
+                        <select name="to" id="to">
+                            <option value="Zarcero">Zarcero</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="button">Find rides</button>
+                </section>
+
+                <section class="check-inputs container">
+                    <h2>Days</h2>
+                    <div>
+                        <input
+                            type="checkbox"
+                            id="mon"
+                            value="Monday"
+                            checked
+                        />
+                        <label for="mon">Mon</label>
+                    </div>
+                    <div>
+                        <input
+                            type="checkbox"
+                            id="tue"
+                            value="Tuesday"
+                            checked
+                        />
+                        <label for="tue">Tue</label>
+                    </div>
+                    <div>
+                        <input
+                            type="checkbox"
+                            id="wed"
+                            value="Wednesday"
+                            checked
+                        />
+                        <label for="wed">Wed</label>
+                    </div>
+                    <div>
+                        <input
+                            type="checkbox"
+                            id="thu"
+                            value="Thursday"
+                            checked
+                        />
+                        <label for="thu">Thu</label>
+                    </div>
+                    <div>
+                        <input
+                            type="checkbox"
+                            id="fri"
+                            value="Friday"
+                            checked
+                        />
+                        <label for="fri">Fri</label>
+                    </div>
+                    <div>
+                        <input
+                            type="checkbox"
+                            id="sat"
+                            value="Saturday"
+                            checked
+                        />
+                        <label for="sat">Sat</label>
+                    </div>
+                    <div>
+                        <input
+                            type="checkbox"
+                            id="sun"
+                            value="Sunday"
+                            checked
+                        />
+                        <label for="sun">Sun</label>
+                    </div>
+                </section>
+            </form>
+
+            <section class="search-results container">
+                <h2>
+                    Rides found from <strong>Quesada</strong> to
+                    <strong>Zarcero</strong>
+                </h2>
+
+                <table class="rides-table">
+                    <thead>
+                        <tr>
+                            <th>Driver</th>
+                            <th>From</th>
+                            <th>To</th>
+                            <th>Seats</th>
+                            <th>Car</th>
+                            <th>Fee</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div>
+                                    <img
+                                        src="../assets/images/profile.png"
+                                        alt="image profile"
+                                    />
+                                    barroyo
+                                </div>
+                            </td>
+                            <td>
+                                <a href="../pages/rides-ride_details.html"
+                                    >Quesada</a
+                                >
+                            </td>
+                            <td>Alajuela</td>
+                            <td>2</td>
+                            <td>Nissan Pathfinder 2015</td>
+                            <td>$5</td>
+                            <td>
+                                <a href="#">Request</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div>
+                                    <img
+                                        src="../assets/images/profile.png"
+                                        alt="image profile"
+                                    />
+                                    barroyo
+                                </div>
+                            </td>
+                            <td>
+                                <a href="../pages/rides-ride_details.html"
+                                    >Quesada</a
+                                >
+                            </td>
+                            <td>Naranjo</td>
+                            <td>1</td>
+                            <td>Toyota Corolla 2020</td>
+                            <td>$10</td>
+                            <td>
+                                <a href="#">Request</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div>
+                                    <img
+                                        src="../assets/images/profile.png"
+                                        alt="image profile"
+                                    />
+                                    yluna
+                                </div>
+                            </td>
+                            <td>
+                                <a href="../pages/rides-ride_details.html"
+                                    >Aguas Zarcas</a
+                                >
+                            </td>
+                            <td>Naranjo</td>
+                            <td>1</td>
+                            <td>Ford Festiva 1990</td>
+                            <td>--</td>
+                            <td>
+                                <a href="#">Request</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <div class="map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d51027.864460865516!2d-84.43879189104376!3d10.32424347499624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2scr!4v1752282217932!5m2!1sen!2scr"
+                    width="1100"
+                    height="280"
+                    style="border: 0"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    class="container"
+                ></iframe>
+            </div>
+        </main>
+
+        <footer class="footer container">
+            <div class="footer__container">
+                <nav class="footer__nav container">
+                    <ul class="footer__list container">
+                        <li>
+                            <a href="../pages/home-search_rides.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="../pages/rides-my_rides.html">Rides</a>
+                        </li>
+                        <li><a href="../pages/bookings.html">Bookings</a></li>
+                        <li>
+                            <a href="../pages/home-edit_profile.html"
+                                >Settings</a
+                            >
+                        </li>
+                        <li><a href="../index.html">Login</a></li>
+                        <li>
+                            <a href="../pages/registration-user.html"
+                                >Register</a
+                            >
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="footer__copyright container">
+                    <p>
+                        <img
+                            src="../assets/images/copyright.png"
+                            alt="copyright image"
+                        />
+                        Aventones.com
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

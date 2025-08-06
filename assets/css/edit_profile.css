@@ -1,0 +1,13 @@
+.form-buttons {
+    margin: 40px auto 38px;
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
+}
+
+.create-button {
+    padding: 10px 70px;
+    border: 1px solid #666666;
+    background-color: #428bca;
+    color: #ffffff;
+}

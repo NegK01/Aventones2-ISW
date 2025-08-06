@@ -1,0 +1,97 @@
+main h2 {
+    justify-self: center;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    font-size: 2rem;
+    margin-bottom: 16px;
+    border-bottom: #606060 1px solid;
+    padding: 0 20px;
+}
+
+.form-container {
+    flex-direction: column;
+}
+
+.ride-details {
+    flex-direction: column;
+    width: 600px;
+}
+
+.section-text-inputs {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+}
+
+.section-text-inputs div {
+    flex-direction: column;
+    width: 100%;
+}
+
+.section-check-inputs {
+    width: 100%;
+    margin: 15px 0;
+    padding: 0;
+    border: none;
+}
+
+.section-check-inputs div {
+    width: 100%;
+    accent-color: #ffffff;
+    padding: 10px;
+}
+
+.section-control-inputs {
+    width: 100%;
+    justify-content: space-between;
+}
+
+.section-control-inputs div {
+    flex-direction: column;
+    width: 110px;
+    margin: 0;
+}
+
+.vehicle-details {
+    width: 600px;
+    margin: 25px auto;
+    justify-content: space-around;
+    padding: 0;
+}
+
+.vehicle-details legend {
+    position: relative;
+    top: -8px;
+    border-bottom: rgb(122, 122, 122) 1px solid;
+}
+
+.vehicle-details div {
+    margin: 35px 0;
+    padding: 0px;
+    flex-direction: column;
+    width: 120px;
+}
+
+.vehicle-model {
+    width: 190px !important;
+}
+
+.form-buttons {
+    margin: 40px auto 38px;
+    justify-content: space-between;
+    align-items: center;
+    width: 600px;
+}
+
+.create-button {
+    padding: 10px 70px;
+    border: 1px solid #666666;
+    background-color: #428bca;
+    color: #ffffff;
+}
+
+input,
+select {
+    padding: 8px;
+    font-size: 1rem;
+}

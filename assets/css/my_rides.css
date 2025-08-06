@@ -1,0 +1,49 @@
+main > h2 {
+    justify-self: center;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    font-size: 2rem;
+    margin-bottom: 16px;
+    border-bottom: #606060 1px solid;
+}
+
+.rides-table-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.rides-table-container a {
+    color: #f8f8f8;
+    text-decoration: none;
+}
+
+.new-ride-btn {
+    display: flex;
+    padding: 10px 20px;
+    margin-bottom: 1rem;
+    align-self: end;
+    border: 1px solid #666666;
+    background-color: #428bca;
+    color: #f8f8f8;
+}
+
+.rides-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.rides-table thead {
+    background-color: #e5e5e5;
+}
+
+.rides-table th,
+.rides-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.rides-table a {
+    border-bottom: 2px solid #428bca;
+    color: #428bca;
+}
