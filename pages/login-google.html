@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Acceder con Google</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../assets/css/google_login.css" />
+        <link
+            rel="shortcut icon"
+            type="image/png"
+            href="//www.google.com/favicon.ico"
+        />
+    </head>
+    <body>
+        <header class="topbar">
+            <div class="google-brand" aria-label="Acceder con Google">
+                <svg
+                    xmlns="https://www.w3.org/2000/svg"
+                    width="20"
+                    height="24"
+                    viewBox="0 0 40 48"
+                    aria-hidden="true"
+                    jsname="jjf7Ff"
+                    style="
+                        box-sizing: border-box;
+                        display: block;
+                        height: 23.9955px;
+                        position: relative;
+                        top: 1px;
+                        width: 20px;
+                    "
+                >
+                    <path
+                        fill="#4285F4"
+                        d="M39.2 24.45c0-1.55-.16-3.04-.43-4.45H20v8h10.73c-.45 2.53-1.86 4.68-4 6.11v5.05h6.5c3.78-3.48 5.97-8.62 5.97-14.71z"
+                        style="box-sizing: border-box"
+                    ></path>
+                    <path
+                        fill="#34A853"
+                        d="M20 44c5.4 0 9.92-1.79 13.24-4.84l-6.5-5.05C24.95 35.3 22.67 36 20 36c-5.19 0-9.59-3.51-11.15-8.23h-6.7v5.2C5.43 39.51 12.18 44 20 44z"
+                        style="box-sizing: border-box"
+                    ></path>
+                    <path
+                        fill="#FABB05"
+                        d="M8.85 27.77c-.4-1.19-.62-2.46-.62-3.77s.22-2.58.62-3.77v-5.2h-6.7C.78 17.73 0 20.77 0 24s.78 6.27 2.14 8.97l6.71-5.2z"
+                        style="box-sizing: border-box"
+                    ></path>
+                    <path
+                        fill="#E94235"
+                        d="M20 12c2.93 0 5.55 1.01 7.62 2.98l5.76-5.76C29.92 5.98 25.39 4 20 4 12.18 4 5.43 8.49 2.14 15.03l6.7 5.2C10.41 15.51 14.81 12 20 12z"
+                        style="box-sizing: border-box"
+                    ></path>
+                </svg>
+                <span class="brand-text">Acceder con Google</span>
+            </div>
+        </header>
+
+        <main class="content">
+            <section class="selection-card" role="main">
+                <div class="left-pane">
+                    <h1>Elegir una cuenta</h1>
+                    <p>
+                        para ir a
+                        <a class="brand-link" href="#" aria-label="Vercel"
+                            >Aventones</a
+                        >
+                    </p>
+                </div>
+
+                <div class="right-pane" aria-label="Lista de cuentas">
+                    <div id="accounts-list"></div>
+
+                    <a
+                        href="#"
+                        class="account-row"
+                        id="use-other-account"
+                        role="button"
+                        aria-label="Usar otra cuenta"
+                    >
+                        <div class="avatar icon" aria-hidden="true">
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                width="22"
+                                height="22"
+                            >
+                                <path
+                                    d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-3.87 0-8 1.94-8 5v1h16v-1c0-3.06-4.13-5-8-5z"
+                                />
+                            </svg>
+                        </div>
+                        <div class="account-info">
+                            <div class="name">Usar otra cuenta</div>
+                        </div>
+                    </a>
+
+                    <div class="legal">
+                        Antes de usar Aventones, revisa su
+                        <a href="#">política de privacidad</a> y
+                        <a href="#">condiciones del servicio</a>.
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="lang">Español (Latinoamérica)</div>
+            <nav class="footer-links" aria-label="Enlaces de pie de página">
+                <a href="#">Ayuda</a>
+                <a href="#">Privacidad</a>
+                <a href="#">Condiciones</a>
+            </nav>
+        </footer>
+        <script src="../js/google_login.js"></script>
+    </body>
+</html>
