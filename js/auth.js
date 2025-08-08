@@ -1,5 +1,13 @@
 const form = document.querySelector('form');
 
+const googleLoginBtn = document.getElementById('google-login');
+if (googleLoginBtn) {
+    googleLoginBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.location.href = '/pages/login-google.html';
+    });
+}
+
 form.addEventListener('submit', function (e) {
     e.preventDefault();
     const id = document.getElementById('id').value.trim();
