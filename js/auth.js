@@ -38,9 +38,8 @@ form.addEventListener('submit', function (e) {
     }
 
     const actualUser = {
-        id: usuarioEncontrado.id,
-        role: usuarioEncontrado.role,
-    }
+        user: usuarioEncontrado,
+    };
     sessionStorage.setItem('actualSession', JSON.stringify(actualUser));
     window.location.href = '/pages/rides-my_rides.html';
 });

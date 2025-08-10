@@ -1,28 +1,28 @@
 (function renderStoredAccounts() {
   const avatarPalette = [
-    '#EF5350',
-    '#AB47BC', 
-    '#5C6BC0', 
-    '#42A5F5', 
-    '#26A69A', 
-    '#66BB6A',
-    '#FFCA28',
-    '#FFA726', 
-    '#8D6E63',
-    '#29B6F6',
-    '#7E57C2',
-    '#EC407A',
+    '#EF5350', //0
+    '#AB47BC', //1
+    '#5C6BC0', //2
+    '#42A5F5', //3
+    '#26A69A', //4
+    '#66BB6A', //5
+    '#FFCA28', //6
+    '#FFA726', //7
+    '#8D6E63', //8
+    '#29B6F6', //9
+    '#7E57C2', //10 = 1234
+    '#EC407A', //11
   ];
 
-  function colorForKey(key) {
+  function colorForKey(key) {//1234
     if (!key) return avatarPalette[0];
     let hash = 0;
-    for (let i = 0; i < key.length; i += 1) {
-      hash = (hash << 5) - hash + key.charCodeAt(i);
-      hash |= 0;
+    for (let i = 0; i < key.length; i += 1) { //4 ciclos    
+      hash = (hash << 5) - hash + key.charCodeAt(i); //(0*31 = 0 + 49 [1 ASCII]) 49 = 0011 0001 | (49*31 = 1519 + 50) 1569 = 0011 0010 |      (1569*31 = 48639 + 51) 48690 = 0011 0010 | (48690*31 = 1509390 + 52) 1509442 = 1011 10000 1000 0100 0010
+      hash |= 0; //49 = 00000000 00000000 00000000 00110001 | 1569 = 00000000 00000000 00000110 00100001 | 48690 = 00000000000000001011111000110010 | 1509442 = 00000000 00010111 00001000 01000010
     }
-    const idx = Math.abs(hash) % avatarPalette.length;
-    return avatarPalette[idx];
+    const idx = Math.abs(hash) % avatarPalette.length; // 9
+    return avatarPalette[idx]; //#7E57C2
   }
   const accountsContainer = document.getElementById('accounts-list');
   if (!accountsContainer) {
@@ -84,11 +84,10 @@
 
     row.addEventListener('click', function (e) {
       e.preventDefault();
-      if (!usuario || !usuario.id) return;
+      if (!usuario) return;
 
       const actualUser = {
-        id: usuario.id,
-        role: usuario.role,
+        user: usuario,
       };
       sessionStorage.setItem('actualSession', JSON.stringify(actualUser));
       window.location.href = '/pages/rides-my_rides.html';
