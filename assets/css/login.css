@@ -12,6 +12,7 @@ input {
     align-items: center;
     height: 100dvh;
     padding: 1rem;
+    width: 90%;
 }
 
 .main__login-container {
@@ -80,7 +81,7 @@ input {
 }
 
 /*Mobile*/
-@media (max-width: 425px) {
+@media (max-width: 600px) {
     .main__login-container {
         padding: 1rem;
         width: 90%;

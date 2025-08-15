@@ -10,6 +10,9 @@ main > h2 {
 .rides-table-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    /* padding: 0 50px; */
+    width: 90%;
 }
 
 .rides-table-container a {
@@ -28,7 +31,7 @@ main > h2 {
 }
 
 .rides-table {
-    width: 100%;
+    width: 90%;
     border-collapse: collapse;
 }
 
@@ -46,4 +49,16 @@ main > h2 {
 .rides-table a {
     border-bottom: 2px solid #428bca;
     color: #428bca;
+}
+
+@media (max-width: 600px) {
+    .new-ride-btn {
+        padding: 0;
+        width: 100%;
+        height: 40px;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1rem;
+        align-self: center;
+    }
 }
