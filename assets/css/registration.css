@@ -6,8 +6,9 @@
 .main__register {
     justify-content: center;
     align-items: center;
-    width: 100%;
+    height: 100%;
     padding: 1rem;
+    width: 90%;
 }
 
 h2 {
@@ -71,4 +72,12 @@ select {
     background-color: #606060;
     color: #dbdbdb;
     margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+    .main__register {
+        align-items: start;
+        height: 85dvh;
+        padding-top: 50px;
+    }
 }

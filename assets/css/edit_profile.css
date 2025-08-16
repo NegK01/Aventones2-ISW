@@ -1,8 +1,16 @@
 .form-buttons {
-    margin: 40px auto 38px;
+    margin: 40px 0px 0;
     justify-content: space-between;
     align-items: center;
-    width: 500px;
+}
+
+.main__register {
+    padding: 0;
+    width: 100%;
+}
+
+.main__register-container form {
+    margin: 0 auto;
 }
 
 .create-button {
