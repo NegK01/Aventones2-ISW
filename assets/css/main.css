@@ -162,7 +162,7 @@ ul {
 
 .footer__list > li {
     list-style-type: none;
-    padding: 0 15px 0 5px; /**/
+    padding: 0 15px 0 5px;
     border-left: 3px solid #aaaaaa;
     text-decoration: none;
 }
