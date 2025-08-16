@@ -17,7 +17,6 @@
 
 .form-controls {
     width: max-content;
-    /* margin: 10px 0 5px 80px; */
     width: 90%;
     justify-content: space-between;
 }
