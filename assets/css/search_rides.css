@@ -85,37 +85,58 @@ td div {
 }
 
 @media (max-width: 600px) {
+    .search-form {
+        flex-direction: column;
+        border: 2px solid #606060;
+        padding: 30px 0 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
     .form-control-left {
         margin: 0;
     }
 
     .form-controls {
-        gap: 16px;
+        gap: 5px;
         width: 100%;
-        margin: 0;
+        display: flex;
+        flex-direction: column;
     }
 
     .form-control-right button {
-        margin-left: 0px;
+        margin-left: 52px;
+        width: 250px;
+        display: block;
+        margin-top: 5px;
     }
 
     .form-controls select {
-        width: 95px;
+        width: 250px;
         height: 30px;
         font-size: 1rem;
     }
 
-    .check-inputs {
-        align-items: center;
-        gap: 30px;
-        width: max-content;
-        width: 90%;
-        justify-content: space-between;
+    .form-control-left label {
+        margin-right: 3px !important;
+    }
+
+    .form-control-right select {
+        margin: 5px 12px !important;
+    }
+
+    .form-control-right label {
+        margin-right: 20px !important;
     }
 
     .check-inputs {
-        gap: 25px;
-        margin: 10px 0 5px;
+        align-items: center;
+        margin: 15px;
+        gap: 18px;
+    }
+
+    .form-controls label {
+        margin: 15px;
     }
 
     .search-container {
