@@ -86,10 +86,10 @@
       e.preventDefault();
       if (!usuario) return;
 
-      const actualUser = {
+      const currentUser = {
         user: usuario,
       };
-      sessionStorage.setItem('actualSession', JSON.stringify(actualUser));
+      sessionStorage.setItem('currentSession', JSON.stringify(currentUser));
       window.location.href = '/pages/rides-my_rides.html';
     });
 

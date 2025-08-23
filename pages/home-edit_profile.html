@@ -51,7 +51,10 @@
             <h2>Edit Profile</h2>
 
             <section class="main__register-container container">
-                <form action="../pages/home-search_rides.html">
+                <form
+                    action="../pages/home-search_rides.html"
+                    id="edit-profile-form"
+                >
                     <div class="form-row container">
                         <div class="form-group">
                             <label for="first_name-reg">First Name</label>
@@ -122,6 +125,7 @@
                         <div class="form-group">
                             <label for="country-reg">Country</label>
                             <select name="country-reg" id="country-reg">
+                                <option value="us">United States</option>
                                 <option value="cr">Costa Rica</option>
                             </select>
                         </div>
@@ -207,5 +211,7 @@
                 </div>
             </div>
         </footer>
+
+        <script src="/js/home.js"></script>
     </body>
 </html>

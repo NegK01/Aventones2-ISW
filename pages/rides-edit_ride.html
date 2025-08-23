@@ -6,7 +6,7 @@
         <title>Document</title>
         <link rel="stylesheet" href="../assets/css/main.css" />
         <link rel="stylesheet" href="../assets/css/new_ride.css" />
-        <link rel="stylesheet" href="../assets/css/ride_details.css">
+        <link rel="stylesheet" href="../assets/css/ride_details.css" />
     </head>
     <body>
         <header class="header-container container">
@@ -53,9 +53,10 @@
         </header>
 
         <main>
-            <h2>New Ride</h2>
+            <h2>Edit Ride</h2>
 
             <form
+                id="edit-ride"
                 action="../pages/rides-my_rides.html"
                 class="form-container container"
             >
@@ -67,7 +68,6 @@
                                 type="text"
                                 id="departure-from"
                                 name="departure-from"
-                                value="Quesada"
                             />
                         </div>
                         <div class="container">
@@ -84,66 +84,31 @@
                     <fieldset class="section-check-inputs container">
                         <legend>Days</legend>
                         <div>
-                            <input
-                                type="checkbox"
-                                id="mon"
-                                value="Monday"
-                                checked
-                            />
+                            <input type="checkbox" id="mon" value="Monday" />
                             <label for="mon">Mon</label>
                         </div>
                         <div>
-                            <input
-                                type="checkbox"
-                                id="tue"
-                                value="Tuesday"
-                                checked
-                            />
+                            <input type="checkbox" id="tue" value="Tuesday" />
                             <label for="tue">Tue</label>
                         </div>
                         <div>
-                            <input
-                                type="checkbox"
-                                id="wed"
-                                value="Wednesday"
-                                checked
-                            />
+                            <input type="checkbox" id="wed" value="Wednesday" />
                             <label for="wed">Wed</label>
                         </div>
                         <div>
-                            <input
-                                type="checkbox"
-                                id="thu"
-                                value="Thursday"
-                                checked
-                            />
+                            <input type="checkbox" id="thu" value="Thursday" />
                             <label for="thu">Thu</label>
                         </div>
                         <div>
-                            <input
-                                type="checkbox"
-                                id="fri"
-                                value="Friday"
-                                checked
-                            />
+                            <input type="checkbox" id="fri" value="Friday" />
                             <label for="fri">Fri</label>
                         </div>
                         <div>
-                            <input
-                                type="checkbox"
-                                id="sat"
-                                value="Saturday"
-                                checked
-                            />
+                            <input type="checkbox" id="sat" value="Saturday" />
                             <label for="sat">Sat</label>
                         </div>
                         <div>
-                            <input
-                                type="checkbox"
-                                id="sun"
-                                value="Sunday"
-                                checked
-                            />
+                            <input type="checkbox" id="sun" value="Sunday" />
                             <label for="sun">Sun</label>
                         </div>
                     </fieldset>
@@ -151,10 +116,19 @@
                     <div class="section-control-inputs container">
                         <div class="container">
                             <label for="time">Time</label>
-                            <select id="time" name="time">
+                            <input
+                                type="time"
+                                id="time"
+                                name="time"
+                                min="00:00"
+                                max="24:00"
+                                step="60"
+                                style="font-family: inherit"
+                            />
+                            <!-- <select id="time" name="time">
                                 <option value="10:00">10:00 am</option>
                                 <option value="10:30">10:30 am</option>
-                            </select>
+                            </select> -->
                         </div>
                         <div class="container">
                             <label for="seats">Seats</label>
@@ -185,13 +159,14 @@
 
                     <div class="">
                         <label for="make">Make</label>
-                        <select id="make" name="make">
+                        <input type="text" name="make" id="make" />
+                        <!-- <select id="make" name="make">
                             <option value="Nissan">Nissan</option>
                             <option value="Toyota">Toyota</option>
                             <option value="Ford">Ford</option>
-                        </select>
+                        </select> -->
                     </div>
-                    <div class="vehicle-model ">
+                    <div class="vehicle-model">
                         <label for="model">Model</label>
                         <input
                             type="text"
@@ -258,5 +233,7 @@
                 </div>
             </div>
         </footer>
+
+        <script src="/js/rides.js"></script>
     </body>
 </html>
