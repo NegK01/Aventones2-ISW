@@ -1,7 +1,8 @@
 .form-buttons {
     margin: 40px 0px 0;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-around;
+    gap: 120px;
 }
 
 .main__register {

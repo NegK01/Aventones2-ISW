@@ -136,6 +136,6 @@ select {
 
     .form-buttons {
         justify-content: space-around;
-        gap: 70px;
+        gap: 96px;
     }
 }
