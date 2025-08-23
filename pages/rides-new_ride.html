@@ -55,7 +55,7 @@
             <h2>New Ride</h2>
 
             <form
-                action="../pages/rides-my_rides.html"
+                
                 class="form-container container"
             >
                 <section class="ride-details container">
@@ -148,10 +148,19 @@
                     <div class="section-control-inputs container">
                         <div class="container">
                             <label for="time">Time</label>
-                            <select id="time" name="time">
+                            <!-- <select id="time" name="time">
                                 <option value="10:00">10:00 am</option>
                                 <option value="10:30">10:30 am</option>
-                            </select>
+                            </select> -->
+                            <input
+                                type="time"
+                                id="time"
+                                name="time"
+                                min="00:00"
+                                max="24:00"
+                                step="60"
+                                style="font-family: inherit;"
+                            />
                         </div>
                         <div class="container">
                             <label for="seats">Seats</label>
@@ -160,6 +169,7 @@
                                 id="seats"
                                 name="seats"
                                 min="1"
+                                max="10"
                                 value="2"
                             />
                         </div>
@@ -170,6 +180,7 @@
                                 id="fee"
                                 name="fee"
                                 min="0"
+                                max="100000"
                                 step="any"
                                 value="15"
                             />
@@ -182,13 +193,14 @@
 
                     <div class="">
                         <label for="make">Make</label>
-                        <select id="make" name="make">
+                        <input type="text" name="make" id="make">
+                        <!-- <select id="make" name="make">
                             <option value="Nissan">Nissan</option>
                             <option value="Toyota">Toyota</option>
                             <option value="Ford">Ford</option>
-                        </select>
+                        </select> -->
                     </div>
-                    <div class="vehicle-model ">
+                    <div class="vehicle-model">
                         <label for="model">Model</label>
                         <input
                             type="text"
@@ -211,10 +223,19 @@
                 </fieldset>
 
                 <div class="form-buttons container">
-                    <a href="../pages/rides-my_rides.html" class="cancel-button"
+                    <a
+                        href="../pages/rides-my_rides.html"
+                        class="cancel-button"
+                        id="cancel-ride"
                         >Cancel</a
                     >
-                    <button type="submit" class="create-button">Create</button>
+                    <button
+                        type="submit"
+                        class="create-button"
+                        id="create-ride"
+                    >
+                        Create
+                    </button>
                 </div>
             </form>
         </main>
@@ -255,5 +276,7 @@
                 </div>
             </div>
         </footer>
+
+        <script src="/js/rides.js"></script>
     </body>
 </html>

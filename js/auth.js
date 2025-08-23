@@ -37,9 +37,9 @@ form.addEventListener('submit', function (e) {
         return;
     }
 
-    const actualUser = {
+    const currentUser = {
         user: usuarioEncontrado,
     };
-    sessionStorage.setItem('actualSession', JSON.stringify(actualUser));
+    sessionStorage.setItem('currentSession', JSON.stringify(currentUser));
     window.location.href = '/pages/rides-my_rides.html';
 });
