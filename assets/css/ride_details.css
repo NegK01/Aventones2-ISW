@@ -37,6 +37,7 @@
 
 .section-control-inputs {
     justify-content: space-between;
+    width: 100%;
     gap: 80px;
     margin: 30px 0;
 }
@@ -56,6 +57,7 @@
 }
 
 .vehicle-details {
+    width: 600px;
     margin: 25px auto;
     justify-content: space-around;
     padding: 0;
@@ -74,6 +76,11 @@
 }
 
 @media (max-width: 600px) {
+    .section-text-inputs {
+        display: flex;
+        flex-direction: column;
+    }
+
     .section-text-inputs h3,
     .section-text-inputs p {
         width: max-content;
@@ -81,19 +88,14 @@
 
     .section-text-inputs p {
         font-weight: lighter;
-        font-size: 1.1rem;
+        font-size: 1.3rem;
     }
 
     .vehicle-details {
         padding: 0;
         display: flex;
         flex-direction: column;
-    }
-
-    .section-control-inputs {
         width: 90%;
-        margin: 0 auto;
-        gap: 10px;
     }
 
     .vehicle-details div {
@@ -102,9 +104,23 @@
         width: 0;
     }
 
+    .section-control-inputs {
+        width: 100%;
+        margin: 0 auto;
+        gap: 10px;
+        flex-direction: column;
+    }
+
+    .section-control-inputs input,
+    .section-control-inputs select {
+        box-sizing: border-box;
+        width: 250px;
+    }
+
     .vehicle-details input,
     .vehicle-details select {
-        width: 248px;
+        width: 250px;
+        box-sizing: border-box;
     }
 
     .vehicle-model {

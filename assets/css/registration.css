@@ -77,7 +77,35 @@ select {
 @media (max-width: 600px) {
     .main__register {
         align-items: start;
-        height: 85dvh;
         padding-top: 50px;
+    }
+    .main__register {
+        justify-content: center;
+        align-items: start;
+        height: 100%;
+        padding: 1rem;
+        padding-top: 50px;
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .main__register-container {
+        width: 100%;
+    }
+
+    .form-row {
+        gap: 20px;
+        padding: 0 10px;
+    }
+
+    .form-row input,
+    .form-row select {
+        width: 170px;
+        box-sizing: border-box;
+    }
+
+    .form-row-unico input {
+        width: 365px;
     }
 }
