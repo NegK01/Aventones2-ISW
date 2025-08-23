@@ -94,12 +94,21 @@ function initBookings() {
 
     tbody.innerHTML = '';
 
-    requestedRides.forEach(req => {
+    // Filtrar las solicitudes antes de iterar para mejorar la claridad
+    const filteredRequests = requestedRides.filter(req => {
         const ride = req.ride;
         const status = req.status;
-
-        // Filtrado: si es driver y la solicitud ya tiene estado distinto de "pending", saltarla
-        if (currentUser.role === "driver" && status !== "pending") return;
+        if (currentUser.role === "driver") {
+            // Drivers solo ven solicitudes pendientes de sus rides
+            return status === "pending" && ride.owner == currentUser.id;
+        } else {
+            // Usuarios normales ven sus propias solicitudes
+            return req.userId === currentUser.id;
+        }
+    });
+    filteredRequests.forEach(req => {
+        const ride = req.ride;
+        const status = req.status;
 
         const driver = allUsers.find(d => d.id == ride.owner);
         const requesterName = allUsers.find(d => d.id == req.userId)?.firstName || 'Unknown User';

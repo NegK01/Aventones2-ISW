@@ -1,11 +1,18 @@
+function isDriverPageAccessAllowed(currentUser) {
+    // Permitir acceso si el usuario es un conductor, o si es un usuario viendo los detalles del viaje
+    if (!currentUser) return false;
+    if (currentUser.role === 'driver') return true;
+    // Si no es un conductor, solo permitir si esta viendo los detalles del viaje
+    return !!document.getElementById("ride-details");
+}
+
 (function () {
     const currentUser = getCurrentUser();
-    if (!currentUser || currentUser.role !== 'driver' && !document.getElementById("ride-details")) {
+    if (!isDriverPageAccessAllowed(currentUser)) {
         alert("Esta pagina es solo para conductores");
         window.location.href = '/pages/home-search_rides.html';
         return;
     }
-
     if (document.getElementById("tbody")) {
         initMyRides(currentUser);
     } else if (document.getElementById("create-ride")) {
@@ -29,6 +36,14 @@ function getCurrentUser() {
     }
     return null;
 }
+
+function getNextRideId() {
+    // Obtiene el proximo ID de ride desde localStorage
+    let nextRideId = parseInt(localStorage.getItem("nextRideId") || "0");
+    localStorage.setItem("nextRideId", nextRideId + 1); // incrementa para la próxima vez
+    return nextRideId;
+}
+
 
 function initMyRides(currentUser) {
     const tbody = document.getElementById("tbody");
@@ -141,7 +156,7 @@ function initNewRide(currentUser) {
         const myRides = JSON.parse(localStorage.getItem('myRides')) || [];
         const newRide = {
             owner: currentUser.id,
-            id: myRides.length,
+            id: getNextRideId(),
             departureFrom,
             arriveTo,
             days: checkedDays,
