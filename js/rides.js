@@ -1,13 +1,13 @@
 (function () {
     const currentUser = getCurrentUser();
-    if (!currentUser || currentUser.role !== 'driver') {
+    if (!currentUser || currentUser.role !== 'driver' && !document.getElementById("ride-details")) {
         alert("Esta pagina es solo para conductores");
         window.location.href = '/pages/home-search_rides.html';
         return;
     }
 
     if (document.getElementById("tbody")) {
-        initMyRides();
+        initMyRides(currentUser);
     } else if (document.getElementById("create-ride")) {
         initNewRide(currentUser);
     } else if (document.getElementById("ride-details")) {
@@ -16,7 +16,6 @@
         initEditRide();
     }
 })();
-
 
 function getCurrentUser() {
     var currentSession = sessionStorage.getItem("currentSession");
@@ -31,12 +30,14 @@ function getCurrentUser() {
     return null;
 }
 
-function initMyRides() {
+function initMyRides(currentUser) {
     const tbody = document.getElementById("tbody");
 
     tbody.innerHTML = "";
 
-    const myRides = JSON.parse(localStorage.getItem('myRides')) || [];
+    const allRides = JSON.parse(localStorage.getItem('myRides')) || [];
+    const myRides = allRides.filter(r => r.owner === currentUser.id);
+
     myRides.forEach((ride) => {
         const tr = document.createElement('tr');
 
@@ -166,7 +167,7 @@ function initNewRide(currentUser) {
 }
 
 function initRideDetails() {
-    const ride = searchSelectedRide();
+    const { ride } = searchSelectedRide();
     if (!ride) return;
 
     const departure = document.getElementById("departure");
@@ -184,13 +185,14 @@ function initRideDetails() {
 }
 
 function initEditRide() {
-    const ride = searchSelectedRide();
+    const { ride, inputs } = searchSelectedRide();
     if (!ride) {
         alert("Ride no encontrado");
         window.location.href = '/pages/rides-my_rides.html';
         return;
     }
 
+    /* Los 2 elementos que no estan en searchSelectedRIde */
     const departure = document.getElementById("departure-from");
     const arrival = document.getElementById("arrive-to");
     if (departure) departure.value = ride.departureFrom;
@@ -210,12 +212,12 @@ function initEditRide() {
 
             const departureFrom = departure.value.trim();
             const arriveTo = arrival.value.trim();
-            const time = time.value.trim();
-            const seats = seats.value.trim();
-            const fee = fee.value.trim();
-            const make = make.value.trim();
-            const model = model.value.trim();
-            const year = year.value.trim();
+            const time = inputs.time.value.trim();
+            const seats = inputs.seats.value.trim();
+            const fee = inputs.fee.value.trim();
+            const make = inputs.make.value.trim();
+            const model = inputs.model.value.trim();
+            const year = inputs.year.value.trim();
 
             const checkedDays = [];
             const checkboxes = document.querySelectorAll('input[type="checkbox"]');
@@ -276,16 +278,16 @@ function searchSelectedRide() {
 
     let ride = myRides.find(r => r.id == rideId);
 
-    if (ride) {
-        const departure = document.getElementById("departure-from");
-        const arrival = document.getElementById("arrive-to");
-        const time = document.getElementById("time");
-        const seats = document.getElementById("seats");
-        const fee = document.getElementById("fee");
-        const make = document.getElementById("make");
-        const model = document.getElementById("model");
-        const year = document.getElementById("year");
+    const departure = document.getElementById("departure-from");
+    const arrival = document.getElementById("arrive-to");
+    const time = document.getElementById("time");
+    const seats = document.getElementById("seats");
+    const fee = document.getElementById("fee");
+    const make = document.getElementById("make");
+    const model = document.getElementById("model");
+    const year = document.getElementById("year");
 
+    if (ride) {
         if (departure) departure.value = ride.departureFrom;
         if (arrival) arrival.value = ride.arriveTo;
         if (time) time.value = ride.time;
@@ -295,7 +297,11 @@ function searchSelectedRide() {
         if (model) model.value = ride.model;
         if (year) year.value = ride.year;
 
-        return ride; // faltan 2 campos mas pero son distintos, asi que se manejan aparte
+        return {
+            ride,
+            inputs: { departure, arrival, time, seats, fee, make, model, year }
+            // faltan 2 campos mas pero son distintos, asi que se manejan aparte
+        };
     } else {
         console.log("Ride no encontrado");
         return null;

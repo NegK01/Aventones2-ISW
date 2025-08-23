@@ -60,15 +60,17 @@
                     <section class="form-controls container">
                         <div class="form-control-left">
                             <label for="from">From</label>
-                            <select name="from" id="from">
+                            <input type="text" name="from" id="from">
+                            <!-- <select name="from" id="from">
                                 <option value="Quesada">Quesada</option>
-                            </select>
+                            </select> -->
                         </div>
                         <div class="form-control-right">
                             <label for="to">To</label>
-                            <select name="to" id="to">
+                            <input type="text" name="to" id="to">
+                            <!-- <select name="to" id="to">
                                 <option value="Zarcero">Zarcero</option>
-                            </select>
+                            </select> -->
 
                             <button type="submit" class="button">
                                 Find rides
@@ -162,7 +164,7 @@
                                 <th>Actions</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="search-rides-tbody">
                             <tr>
                                 <td>
                                     <div>
@@ -286,5 +288,7 @@
                 </div>
             </div>
         </footer>
+            
+        <script src="/js/home.js"></script>
     </body>
 </html>
