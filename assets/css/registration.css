@@ -63,7 +63,8 @@ select {
 }
 
 .form-submit {
-    justify-self: center;
+    display: flex;
+    justify-content: center;
 }
 
 .form-submit button {
