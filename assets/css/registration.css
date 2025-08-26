@@ -1,3 +1,7 @@
+:root {
+    --color-texto-oscuro: #606060;
+}
+
 .header__register {
     padding-top: 40px;
     justify-content: center;
@@ -6,8 +10,10 @@
 .main__register {
     justify-content: center;
     align-items: center;
-    width: 100%;
+    height: 100%;
     padding: 1rem;
+    width: 90%;
+    margin-bottom: 50px;
 }
 
 h2 {
@@ -27,7 +33,7 @@ h2::after {
     transform: translateX(-50%);
     width: 60%;
     height: 1px;
-    background-color: #606060;
+    background-color: var(--color-texto-oscuro);
 }
 
 .header__logo-container img {
@@ -62,13 +68,50 @@ select {
 }
 
 .form-submit {
-    justify-self: center;
+    display: flex;
+    justify-content: center;
 }
 
 .form-submit button {
     width: 120px;
     height: 30px;
-    background-color: #606060;
+    background-color: var(--color-texto-oscuro);
     color: #dbdbdb;
     margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+    .main__register {
+        align-items: start;
+        padding-top: 50px;
+    }
+    .main__register {
+        justify-content: center;
+        align-items: start;
+        height: 100%;
+        padding: 1rem;
+        padding-top: 50px;
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .main__register-container {
+        width: 100%;
+    }
+
+    .form-row {
+        gap: 20px;
+        padding: 0 10px;
+    }
+
+    .form-row input,
+    .form-row select {
+        width: 170px;
+        box-sizing: border-box;
+    }
+
+    .form-row-unico input {
+        width: 365px;
+    }
 }

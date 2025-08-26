@@ -1,15 +1,35 @@
-.search-form {
-    flex-direction: column;
-    border: 2px solid #606060;
-    padding: 30px 0 10px;
+:root {
+    --color-primario: #428bca;
+    --color-texto-oscuro: #606060;
+    --color-texto-gris: #666666;
+    --color-fondo: #ffffff;
 }
 
-.search-form form {
-    flex-direction: row;
+.search-form {
+    flex-direction: column;
+    border: 2px solid var(--color-texto-oscuro);
+    padding: 30px 0 10px;
+    width: 100%;
+}
+
+.search-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 50px;
 }
 
 .form-control-left {
-    margin: 0 400px 10px 0;
+    margin: 0 0 10px 0;
+}
+
+.form-controls {
+    width: max-content;
+    width: 90%;
+    justify-content: space-between;
+}
+
+.form-controls label {
+    margin-right: 10px;
 }
 
 td div {
@@ -18,15 +38,19 @@ td div {
     justify-content: center;
 }
 
-.form-control-right {
-    margin-right: 25px;
+.form-control-right button {
+    margin-left: 25px;
 }
 
 .check-inputs {
-    align-items: center;
     gap: 30px;
-    width: 864px;
-    margin: 10px 0 5px 80px;
+    width: max-content;
+    width: 90%;
+}
+
+.check-inputs div {
+    display: flex;
+    align-items: center;
 }
 
 .form-controls select {
@@ -39,9 +63,9 @@ td div {
     height: 30px;
     padding: 0 15px;
     font-size: 1rem;
-    border: 1px solid #666666;
-    background-color: #428bca;
-    color: #ffffff;
+    border: 1px solid var(--color-texto-gris);
+    background-color: var(--color-primario);
+    color: var(--color-fondo);
 }
 
 .check-inputs h2 {
@@ -52,6 +76,7 @@ td div {
 
 .search-results {
     flex-direction: column;
+    width: 100%;
 }
 
 .search-results h2 {
@@ -59,5 +84,93 @@ td div {
 }
 
 .map {
-    margin: 50px 0;
+    overflow: hidden;
+    padding: 25px 0px;
+    min-height: 320px; /* Altura mínima para el iframe */
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.map iframe {
+    width: 100%;
+    max-width: 1260px; /* Limita el ancho máximo para mantener proporciones */
+    height: 280px; /* Altura específica del iframe */
+}
+
+@media (max-width: 600px) {
+    .search-form {
+        flex-direction: column;
+        border: 2px solid var(--color-texto-oscuro);
+        padding: 30px 0 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .form-control-left {
+        margin: 0;
+    }
+
+    .form-controls {
+        gap: 5px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-control-right button {
+        margin-left: 52px;
+        width: 250px;
+        display: block;
+        margin-top: 5px;
+    }
+
+    .form-controls select {
+        width: 250px;
+        height: 30px;
+        font-size: 1rem;
+    }
+
+    .form-control-left label {
+        margin-right: 3px !important;
+    }
+
+    .form-control-right select {
+        margin: 5px 12px !important;
+    }
+
+    .form-control-right label {
+        margin-right: 20px !important;
+    }
+
+    .check-inputs {
+        align-items: center;
+        margin: 15px;
+        gap: 18px;
+        width: 50px;
+    }
+
+    .check-inputs div {
+        display: block;
+        align-items: center;
+    }
+
+    .form-controls label {
+        margin: 15px;
+    }
+
+    .search-container {
+        padding: 0 10px;
+    }
+
+    /* Ocultar la imagen del conductor en móvil (solo la imagen, mantener el nombre) */
+    .rides-table td:first-child img {
+        display: none;
+    }
+
+    /* Ocultar la columna del vehículo (Car) completamente en móvil */
+    .rides-table th:nth-child(5),
+    .rides-table td:nth-child(5) {
+        display: none;
+    }
 }

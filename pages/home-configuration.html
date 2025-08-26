@@ -20,26 +20,19 @@
             <nav class="header__nav-container container">
                 <div class="nav-left">
                     <ul>
-                        <li>
+                        <li class="nav-activo">
                             <a href="../pages/home-search_rides.html">Home</a>
                         </li>
                         <li>
                             <a href="../pages/rides-my_rides.html">Rides</a>
                         </li>
-                        <li class="nav-activo">
+                        <li>
                             <a href="../pages/bookings.html">Booking</a>
                         </li>
                     </ul>
                 </div>
 
                 <div class="nav-right">
-                    <input
-                        type="search"
-                        name="search"
-                        id="search"
-                        placeholder="Search..."
-                    />
-
                     <div class="nav-profile">
                         <img
                             src="../assets/images/profile.png"
@@ -59,14 +52,13 @@
         <main>
             <h2>Configuration</h2>
 
-            <section class="configuration-container container">
+            <form class="configuration-container container" id="config-form">
                 <div class="public_name">
                     <label for="public_name">Public Name</label>
                     <input
                         type="text"
                         name="public_name"
                         id="public_name"
-                        value="Bladimir"
                     />
                 </div>
 
@@ -74,7 +66,9 @@
                     <label for="public_bio">Public Bio</label>
                     <textarea name="public_bio" id="public_bio"></textarea>
                 </div>
-            </section>
+
+                <button type="submit">Save</button>
+            </form>
         </main>
 
         <footer class="footer container">
@@ -113,5 +107,7 @@
                 </div>
             </div>
         </footer>
+
+        <script src="/js/home.js"></script>
     </body>
 </html>

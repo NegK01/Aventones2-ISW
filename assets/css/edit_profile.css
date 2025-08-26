@@ -1,13 +1,28 @@
+:root {
+    --color-primario: #428bca;
+    --color-texto-gris: #666666;
+    --color-fondo: #ffffff;
+}
+
 .form-buttons {
-    margin: 40px auto 38px;
-    justify-content: space-between;
+    margin: 40px 0px 0;
     align-items: center;
-    width: 500px;
+    justify-content: space-around;
+    gap: 120px;
+}
+
+.main__register {
+    padding: 0;
+    width: 100%;
+}
+
+.main__register-container form {
+    margin: 0 auto;
 }
 
 .create-button {
     padding: 10px 70px;
-    border: 1px solid #666666;
-    background-color: #428bca;
-    color: #ffffff;
+    border: 1px solid var(--color-texto-gris);
+    background-color: var(--color-primario);
+    color: var(--color-fondo);
 }

@@ -1,3 +1,8 @@
+:root {
+    --color-primario: #428bca;
+    --color-fondo: #ffffff;
+}
+
 input {
     width: 97%;
     height: 23px;
@@ -7,20 +12,12 @@ input {
     background-color: inherit;
 }
 
-/* .main__login {
-    width: 100%;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-} */
-
 .main__login {
     justify-content: center;
     align-items: center;
-
-    width: 100%;
-    height: 96vh;
+    height: 100dvh;
     padding: 1rem;
+    width: 90%;
 }
 
 .main__login-container {
@@ -33,7 +30,7 @@ input {
     max-width: 814px;
     max-height: 395px;
     padding: 20px;
-    border: 2px solid #428bca;
+    border: 2px solid var(--color-primario);
     box-sizing: border-box;
 
     margin: 0;
@@ -54,7 +51,7 @@ input {
     justify-content: space-evenly;
     width: 170px;
     height: 30px;
-    background-color: #ffffff;
+    background-color: var(--color-fondo);
     border: 1px solid #ecebed;
     color: #4384f1;
     font-weight: bold;
@@ -70,7 +67,7 @@ input {
     font-weight: bold;
 }
 
-.main__login-username {
+.main__login-id {
     padding-bottom: 20px;
 }
 
@@ -88,7 +85,8 @@ input {
     border-radius: 4px;
 }
 
-@media (max-width: 425px) {
+/*Mobile*/
+@media (max-width: 600px) {
     .main__login-container {
         padding: 1rem;
         width: 90%;
@@ -96,20 +94,5 @@ input {
 
     .main__login-google button {
         width: 100%;
-    }
-
-    .footer {
-        align-items: center;
-        width: 100%;
-        max-width: max-content;
-        padding: 1rem;
-    }
-
-    .footer__list {
-        gap: 10px;
-    }
-
-    .footer__list > li {
-        padding: 0 1px 0 1px;
     }
 }

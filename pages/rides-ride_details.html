@@ -33,13 +33,6 @@
                 </div>
 
                 <div class="nav-right">
-                    <input
-                        type="search"
-                        name="search"
-                        id="search"
-                        placeholder="Search..."
-                    />
-
                     <div class="nav-profile">
                         <img
                             src="../assets/images/profile.png"
@@ -58,10 +51,9 @@
             <h2>Ride Details</h2>
 
             <form
-                action="../pages/rides-my_rides.html"
                 class="form-container container"
             >
-                <section class="ride-details container">
+                <section class="ride-details container" id="ride-details">
                     <div class="profile-container container">
                         <img
                             src="../assets/images/profilehd.png"
@@ -73,77 +65,42 @@
                     <div class="section-text-inputs container">
                         <div>
                             <h3>Departure from</h3>
-                            <p>Quesada</p>
+                            <p id="departure"></p>
                         </div>
                         <div>
-                            <h3>Departure from</h3>
-                            <p>Zarcero</p>
+                            <h3>Arrive To</h3>
+                            <p id="arrival"></p>
                         </div>
                     </div>
 
                     <fieldset class="section-check-inputs container">
                         <legend>Days</legend>
                         <div>
-                            <input
-                                type="checkbox"
-                                id="mon"
-                                value="Monday"
-                                checked
-                            />
+                            <input type="checkbox" id="mon" value="Monday" />
                             <label for="mon">Mon</label>
                         </div>
                         <div>
-                            <input
-                                type="checkbox"
-                                id="tue"
-                                value="Tuesday"
-                                checked
-                            />
+                            <input type="checkbox" id="tue" value="Tuesday" />
                             <label for="tue">Tue</label>
                         </div>
                         <div>
-                            <input
-                                type="checkbox"
-                                id="wed"
-                                value="Wednesday"
-                                checked
-                            />
+                            <input type="checkbox" id="wed" value="Wednesday" />
                             <label for="wed">Wed</label>
                         </div>
                         <div>
-                            <input
-                                type="checkbox"
-                                id="thu"
-                                value="Thursday"
-                                checked
-                            />
+                            <input type="checkbox" id="thu" value="Thursday" />
                             <label for="thu">Thu</label>
                         </div>
                         <div>
-                            <input
-                                type="checkbox"
-                                id="fri"
-                                value="Friday"
-                                checked
-                            />
+                            <input type="checkbox" id="fri" value="Friday" />
                             <label for="fri">Fri</label>
                         </div>
                         <div>
-                            <input
-                                type="checkbox"
-                                id="sat"
-                                value="Saturday"
-                                checked
-                            />
+                            <input type="checkbox" id="sat" value="Saturday" />
                             <label for="sat">Sat</label>
                         </div>
                         <div>
-                            <input
-                                type="checkbox"
-                                id="sun"
-                                value="Sunday"
-                                checked
-                            />
+                            <input type="checkbox" id="sun" value="Sunday" />
                             <label for="sun">Sun</label>
                         </div>
                     </fieldset>
@@ -151,10 +108,15 @@
                     <div class="section-control-inputs container">
                         <div class="container">
                             <label for="time">Time</label>
-                            <select id="time" name="time">
-                                <option value="10:00">10:00 am</option>
-                                <option value="10:30">10:30 am</option>
-                            </select>
+                            <input
+                                type="time"
+                                id="time"
+                                name="time"
+                                min="00:00"
+                                max="24:00"
+                                step="60"
+                                style="font-family: inherit;"
+                            />
                         </div>
                         <div class="container">
                             <label for="seats">Seats</label>
@@ -183,24 +145,24 @@
                 <fieldset class="vehicle-details container">
                     <legend>Vehicle Details</legend>
 
-                    <div class="container">
+                    <div class="">
                         <label for="make">Make</label>
-                        <select id="make" name="make">
+                        <input type="text" name="make" id="make">
+                        <!-- <select id="make" name="make">
                             <option value="Nissan">Nissan</option>
                             <option value="Toyota">Toyota</option>
                             <option value="Ford">Ford</option>
-                        </select>
+                        </select> -->
                     </div>
-                    <div class="vehicle-model container">
+                    <div class="vehicle-model">
                         <label for="model">Model</label>
                         <input
                             type="text"
                             id="model"
                             name="model"
-                            value="Pathfinder"
                         />
                     </div>
-                    <div class="container">
+                    <div class="">
                         <label for="year">Year</label>
                         <input
                             type="number"
@@ -208,7 +170,7 @@
                             name="year"
                             min="1900"
                             max="2099"
-                            value="2020"
+                            value="2025"
                         />
                     </div>
                 </fieldset>
@@ -217,7 +179,7 @@
                     <a href="../pages/rides-my_rides.html" class="cancel-button"
                         >Cancel</a
                     >
-                    <button type="submit" class="create-button">Request</button>
+                    <button type="submit" id="request-ride" class="create-button">Request</button>
                 </div>
             </form>
         </main>
@@ -258,5 +220,7 @@
                 </div>
             </div>
         </footer>
+
+        <script src="/js/rides.js"></script>
     </body>
 </html>
