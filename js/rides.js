@@ -82,6 +82,7 @@ function initMyRides(currentUser) {
             localStorage.setItem('myRides', JSON.stringify(updated));
 
             tr.remove();
+            location.reload();
         });
     });
 
