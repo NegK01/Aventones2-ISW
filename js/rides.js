@@ -45,6 +45,7 @@ function getNextRideId() {
 }
 
 
+// inicializa la vista de rides del conductor actual y permite eliminar rides
 function initMyRides(currentUser) {
     const tbody = document.getElementById("tbody");
 
@@ -92,6 +93,7 @@ function initMyRides(currentUser) {
     });
 }
 
+// inicializa el formulario para crear un nuevo ride con validacion completa
 function initNewRide(currentUser) {
     if (currentUser.carBrand) {
         document.getElementById("make").value = currentUser.carBrand;
@@ -181,6 +183,7 @@ function initNewRide(currentUser) {
     }
 }
 
+// inicializa la vista de detalles de un ride y permite solicitarlo
 function initRideDetails() {
     const { ride } = searchSelectedRide();
     if (!ride) return;
@@ -197,8 +200,43 @@ function initRideDetails() {
             if (check) check.checked = true;
         });
     }
+
+    // Evento para solicitar ride
+    const requestLink = document.getElementById('request-ride');
+    requestLink.addEventListener('click', (ev) => {
+        ev.preventDefault();
+        const rideId = ride.id;
+
+        const currentUser = getCurrentUser();
+        if (currentUser.id === ride.owner) {
+            alert('No puede solicitar su propio ride');
+            return;
+        }
+
+        // usamos el objeto con id de usuarios como llaves
+        const requestedRides = JSON.parse(localStorage.getItem('requestedRides')) || {};
+
+        // si no existe el arreglo del usuario, lo creamos
+        if (!requestedRides[currentUser.id]) {
+            requestedRides[currentUser.id] = [];
+        }
+
+        // evitar duplicados
+        const alreadyRequested = requestedRides[currentUser.id].some(r => r.rideId == rideId);
+        if (alreadyRequested) {
+            alert('Ya solicitaste este ride');
+            return;
+        }
+
+        // agregar el ride al array del usuario con estado pending
+        requestedRides[currentUser.id].push({ rideId: rideId, status: 'pending' });
+
+        localStorage.setItem('requestedRides', JSON.stringify(requestedRides));
+        alert('Ride solicitado exitosamente');
+    });
 }
 
+// inicializa el formulario de edicion de ride con validacion y guardado
 function initEditRide() {
     const { ride, inputs } = searchSelectedRide();
     if (!ride) {
@@ -285,6 +323,7 @@ function initEditRide() {
     }
 }
 
+// busca y retorna un ride especifico basado en el parametro de url
 function searchSelectedRide() {
     let params = new URLSearchParams(window.location.search);
     let rideId = params.get("rideId");

@@ -8,6 +8,7 @@ if (googleLoginBtn) {
     });
 }
 
+// maneja el proceso de autenticacion del usuario en el formulario de login
 form.addEventListener('submit', function (e) {
     e.preventDefault();
     const id = document.getElementById('id').value.trim();

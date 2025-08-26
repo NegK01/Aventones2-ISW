@@ -1,3 +1,9 @@
+:root {
+    --color-primario: #428bca;
+    --color-texto-gris: #666666;
+    --color-fondo: #ffffff;
+}
+
 .form-buttons {
     margin: 40px 0px 0;
     align-items: center;
@@ -16,7 +22,7 @@
 
 .create-button {
     padding: 10px 70px;
-    border: 1px solid #666666;
-    background-color: #428bca;
-    color: #ffffff;
+    border: 1px solid var(--color-texto-gris);
+    background-color: var(--color-primario);
+    color: var(--color-fondo);
 }

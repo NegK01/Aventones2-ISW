@@ -1,10 +1,18 @@
+:root {
+    --color-primario: #428bca;
+    --color-texto-oscuro: #606060;
+    --color-texto-gris: #666666;
+    --color-fondo-gris: #f8f8f8;
+    --color-borde-claro: #ccc;
+}
+
 main > h2 {
     justify-self: center;
     font-weight: lighter;
     letter-spacing: 1px;
     font-size: 2rem;
     margin-bottom: 16px;
-    border-bottom: #606060 1px solid;
+    border-bottom: var(--color-texto-oscuro) 1px solid;
 }
 
 .rides-table-container {
@@ -15,7 +23,7 @@ main > h2 {
 }
 
 .rides-table-container a {
-    color: #f8f8f8;
+    color: var(--color-fondo-gris);
     text-decoration: none;
 }
 
@@ -24,9 +32,9 @@ main > h2 {
     padding: 10px 20px;
     margin-bottom: 1rem;
     align-self: end;
-    border: 1px solid #666666;
-    background-color: #428bca;
-    color: #f8f8f8;
+    border: 1px solid var(--color-texto-gris);
+    background-color: var(--color-primario);
+    color: var(--color-fondo-gris);
 }
 
 .rides-table {
@@ -40,14 +48,14 @@ main > h2 {
 
 .rides-table th,
 .rides-table td {
-    border: 1px solid #ccc;
+    border: 1px solid var(--color-borde-claro);
     padding: 10px;
     text-align: center;
 }
 
 .rides-table a {
-    border-bottom: 2px solid #428bca;
-    color: #428bca;
+    border-bottom: 2px solid var(--color-primario);
+    color: var(--color-primario);
 }
 
 @media (max-width: 600px) {

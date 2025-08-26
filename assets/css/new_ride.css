@@ -1,10 +1,17 @@
+:root {
+    --color-primario: #428bca;
+    --color-texto-oscuro: #606060;
+    --color-texto-gris: #666666;
+    --color-fondo: #ffffff;
+}
+
 main h2 {
     justify-self: center;
     font-weight: lighter;
     letter-spacing: 1px;
     font-size: 2rem;
     margin-bottom: 16px;
-    border-bottom: #606060 1px solid;
+    border-bottom: var(--color-texto-oscuro) 1px solid;
     padding: 0 20px;
 }
 
@@ -37,7 +44,7 @@ main h2 {
 
 .section-check-inputs div {
     width: 100%;
-    accent-color: #ffffff;
+    accent-color: var(--color-fondo);
     padding: 10px;
 }
 
@@ -85,9 +92,9 @@ main h2 {
 
 .create-button {
     padding: 10px 70px;
-    border: 1px solid #666666;
-    background-color: #428bca;
-    color: #ffffff;
+    border: 1px solid var(--color-texto-gris);
+    background-color: var(--color-primario);
+    color: var(--color-fondo);
 }
 
 input,
@@ -123,7 +130,7 @@ select {
         width: 100%;
         padding: 0;
     }
-    
+
     .section-text-inputs div {
         display: flex;
         justify-content: space-between !important;

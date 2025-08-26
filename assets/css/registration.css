@@ -1,3 +1,7 @@
+:root {
+    --color-texto-oscuro: #606060;
+}
+
 .header__register {
     padding-top: 40px;
     justify-content: center;
@@ -9,6 +13,7 @@
     height: 100%;
     padding: 1rem;
     width: 90%;
+    margin-bottom: 50px;
 }
 
 h2 {
@@ -28,7 +33,7 @@ h2::after {
     transform: translateX(-50%);
     width: 60%;
     height: 1px;
-    background-color: #606060;
+    background-color: var(--color-texto-oscuro);
 }
 
 .header__logo-container img {
@@ -70,7 +75,7 @@ select {
 .form-submit button {
     width: 120px;
     height: 30px;
-    background-color: #606060;
+    background-color: var(--color-texto-oscuro);
     color: #dbdbdb;
     margin-top: 20px;
 }

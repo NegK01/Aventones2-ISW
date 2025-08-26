@@ -1,3 +1,8 @@
+:root {
+    --color-primario: #428bca;
+    --color-fondo: #ffffff;
+}
+
 input {
     width: 97%;
     height: 23px;
@@ -25,7 +30,7 @@ input {
     max-width: 814px;
     max-height: 395px;
     padding: 20px;
-    border: 2px solid #428bca;
+    border: 2px solid var(--color-primario);
     box-sizing: border-box;
 
     margin: 0;
@@ -46,7 +51,7 @@ input {
     justify-content: space-evenly;
     width: 170px;
     height: 30px;
-    background-color: #ffffff;
+    background-color: var(--color-fondo);
     border: 1px solid #ecebed;
     color: #4384f1;
     font-weight: bold;

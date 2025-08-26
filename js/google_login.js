@@ -14,6 +14,7 @@
     '#EC407A', //11
   ];
 
+// calcula un color de avatar basado en un texto clave usando hash simple
   function colorForKey(key) {//1234
     if (!key) return avatarPalette[0];
     let hash = 0;
@@ -46,6 +47,7 @@
 
   accountsContainer.innerHTML = '';
 
+  // crea los elementos visuales para mostrar cada cuenta de usuario almacenada
   usuarios.forEach((usuario, index) => {
     const displayName = [usuario.firstName, usuario.lastName].filter(Boolean).join(' ').trim() || usuario.email || usuario.id;
     const email = usuario.email || '';

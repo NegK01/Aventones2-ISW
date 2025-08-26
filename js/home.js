@@ -19,6 +19,7 @@ function getCurrentUser() {
     return null;
 }
 
+// inicializa la funcionalidad de busqueda y filtrado de rides disponibles
 function initSearchRides() {
     const tbody = document.getElementById('search-rides-tbody');
     const drivers = getAllDrivers();
@@ -57,6 +58,7 @@ function getSelectedDays() {
     return days;
 }
 
+// carga y muestra los rides en la tabla con funcionalidad para solicitarlos
 function cargarRides(rides, tbody) {
     tbody.innerHTML = '';
     const drivers = getAllDrivers();
@@ -148,6 +150,7 @@ function getAllDrivers() {
     }
 }
 
+// inicializa el formulario de edicion de perfil con los datos del usuario actual
 function initEditProfile() {
     const currentUser = getCurrentUser();
     if (!currentUser) return;
@@ -211,6 +214,7 @@ function initEditProfile() {
     });
 }
 
+// actualiza los datos del usuario en localstorage y sessionstorage
 function updateUserProfile(updatedUser) {
     let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
     const currentUser = getCurrentUser();
@@ -263,6 +267,7 @@ function validarTelefono(telefono) {
     return /^\d{8,}$/.test(telefono.trim());
 }
 
+// inicializa el formulario de configuracion de perfil publico del usuario
 function initConfiguration() {
     const currentUser = getCurrentUser();
     const publicNameInput = document.getElementById('public_name');

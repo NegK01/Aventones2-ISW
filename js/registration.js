@@ -12,6 +12,7 @@ function validarTelefono(telefono) {
     return /^\d{8,}$/.test(telefono.trim());
 }
 
+// maneja el registro de nuevos usuarios con validacion completa de datos
 form.addEventListener('submit', function (e) {
     e.preventDefault();
     const firstName = document.getElementById('first_name-reg').value.trim();

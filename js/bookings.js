@@ -43,7 +43,7 @@ function getAllUsers() {
     }
 }
 
-// Devuelve un arreglo de objetos { ride, userId, status }
+// obtiene todas las solicitudes de rides guardadas en localstorage y las estructura para mostrar
 function getRequestedRides() {
     const ridesLS = localStorage.getItem('requestedRides');
     if (!ridesLS) return [];
@@ -86,6 +86,7 @@ function updateRideStatus(userId, rideId, status) {
     localStorage.setItem("requestedRides", JSON.stringify(requestedObj));
 }
 
+// inicializa y muestra las reservaciones segun el tipo de usuario actual
 function initBookings() {
     const tbody = document.getElementById('bookings-tbody');
     const requestedRides = getRequestedRides();
